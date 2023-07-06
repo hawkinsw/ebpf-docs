@@ -4,15 +4,16 @@ name: build
 
 on:
   push:
-    branches: [ update ]
+    branches: [ update xml2rfc ]
     paths-ignore:
       - 'pdf/**'
       - 'rfcxml/**'
   pull_request:
-    branches: [ update ]
+    branches: [ update xml2rfc ]
     paths-ignore:
       - 'pdf/**'
       - 'rfcxml/**'
+  workflow_dispatch:
 
 permissions:
   contents: write # for Git to git push
@@ -28,6 +29,7 @@ jobs:
 
     - name: Install xml2rfc
       run: |
+        python -m pip install --upgrade pip
         pip install --user xml2rfc
 
     - uses: actions/checkout@v3
