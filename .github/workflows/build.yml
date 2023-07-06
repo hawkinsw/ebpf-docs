@@ -28,6 +28,7 @@ jobs:
 
     - name: Install xml2rfc
       run: |
+        python -m pip install --upgrade pip
         pip install --user xml2rfc
 
     - uses: actions/checkout@v3
