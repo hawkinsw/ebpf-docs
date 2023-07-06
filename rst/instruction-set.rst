@@ -30,7 +30,7 @@ The eBPF calling convention is defined as:
 * R6 - R9: callee saved registers that function calls will preserve
 * R10: read-only frame pointer to access stack
 
-Registers R0 - R5 are caller-saved registers, meaning the BPF program needs to either
+Regiters R0 - R5 are caller-saved registers, meaning the BPF program needs to either
 spill them to the BPF stack or move them to callee saved registers if these
 arguments are to be reused across multiple function calls. Spilling means
 that the value in the register is moved to the BPF stack. The reverse operation
